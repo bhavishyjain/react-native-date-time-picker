@@ -1,0 +1,11 @@
+.idea/
+.DS_Store
+__MACOSX/
+example/
+src/
+*.log
+.github/
+babel.config.cjs
+tsconfig.json
+tsconfig.cjs.json
+eslint.config.js

@@ -1,0 +1,1007 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      React Native Date Time Picker — High Performance, Custom & Zero
+      Dependencies
+    </title>
+    <meta
+      name="description"
+      content="A smooth, animated date and time picker for React Native with range, multi-select, and custom themes. Zero native dependencies. Works on iOS, Android, and Web."
+    />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=0.1.0" />
+  </head>
+  <body>
+    <!-- Background Gradients -->
+    <div class="bg-gradient-glow top-left"></div>
+    <div class="bg-gradient-glow bottom-right"></div>
+
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <div class="logo-area">
+          <img src="logo.png" alt="DateTimePicker Logo" class="logo-icon" />
+          <span class="logo-text">DateTimePicker</span>
+        </div>
+        <nav>
+          <a href="#features">Features</a>
+          <a href="#demo">Interactive Demo</a>
+          <a href="#installation">Installation</a>
+          <a href="#usage">Usage</a>
+          <a
+            href="https://github.com/bhavishyjain/react-native-date-time-picker"
+            class="github-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="icon-github"
+              viewBox="0 0 16 16"
+              width="16"
+              height="16"
+              fill="currentColor"
+            >
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+              ></path>
+            </svg>
+            GitHub
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="badge-row">
+            <span class="badge">v0.1.0</span>
+            <span class="badge secondary">100% TypeScript</span>
+            <span class="badge success">MIT Licensed</span>
+          </div>
+          <h1>A Smooth, Animated Date & Time Picker</h1>
+          <p class="subtitle">
+            A highly-customizable React Native calendar and clock picker with
+            zero native dependencies. Beautiful out of the box, performant, and
+            fully accessible.
+          </p>
+
+          <div class="install-card-wrapper">
+            <div class="install-card" id="install-command-card">
+              <span class="prompt">$</span>
+              <code class="code-text" id="install-text"
+                >npm install @bhavishyjain/react-native-date-time-picker</code
+              >
+              <button
+                class="copy-button"
+                onclick="copyInstallCommand()"
+                aria-label="Copy installation command"
+              >
+                <svg
+                  id="copy-icon"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path
+                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                  ></path>
+                </svg>
+                <svg
+                  id="check-icon"
+                  class="hidden"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="success"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="button-group">
+            <a href="#demo" class="primary-btn">Try Interactive Demo</a>
+            <a href="#usage" class="secondary-btn">View Code Usage</a>
+          </div>
+        </div>
+
+        <!-- Quick Info / Hero Mockup -->
+        <div class="hero-mockup">
+          <div class="feature-brief">
+            <div class="brief-item">
+              <div class="brief-icon">⚡</div>
+              <div>
+                <h3>Zero Native Dependencies</h3>
+                <p>
+                  Works flawlessly on Expo & Vanilla React Native without
+                  autolinking issues.
+                </p>
+              </div>
+            </div>
+            <div class="brief-item">
+              <div class="brief-icon">🎨</div>
+              <div>
+                <h3>Extremely Customizable</h3>
+                <p>
+                  Supports custom themes, dark mode, custom locales, and accent
+                  colors.
+                </p>
+              </div>
+            </div>
+            <div class="brief-item">
+              <div class="brief-icon">📱</div>
+              <div>
+                <h3>Multiplatform Support</h3>
+                <p>
+                  Smooth, layout-aware animations optimized for iOS, Android,
+                  and Web viewports.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Highlights -->
+    <section id="features" class="features-section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2>Packed with modern features</h2>
+          <p>
+            A library built for modern user interfaces, offering advanced
+            functionalities right out of the box.
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-card-icon">📅</div>
+            <h3>Flexible Picker Modes</h3>
+            <p>
+              Toggle between <code>date</code>, <code>time</code>,
+              <code>datetime</code>, <code>range</code>,
+              <code>multi</code> (multiple selections), <code>month</code>, and
+              <code>year</code> pickers effortlessly.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon">🚀</div>
+            <h3>Smooth Animations</h3>
+            <p>
+              Utilizes <strong>React Native Reanimated</strong> and
+              <strong>Gesture Handler</strong> for highly fluid month
+              transitions, wheel physics, and sheet presentations.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon">🌎</div>
+            <h3>Global & Localized</h3>
+            <p>
+              Integrates with internationalized systems. Supports local calendar
+              weeks, localized headers, and custom timezone mappings.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon">🛠️</div>
+            <h3>Developer Friendly</h3>
+            <p>
+              Fully typed with TypeScript, customizable labels, intervals,
+              constraints (<code>minDate</code>, <code>maxDate</code>), and
+              reactive callback listeners.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Demo Embed Section -->
+    <section id="demo" class="demo-section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2>Interactive Showcase</h2>
+          <p>
+            Experiment with different modes, customize styles, and see how our
+            layout adapts instantly on the simulated device below.
+          </p>
+        </div>
+
+        <div class="demo-display">
+          <!-- Interactive Control Board -->
+          <div class="control-board">
+            <h3>Playground Options</h3>
+
+            <div class="option-group">
+              <label for="picker-mode">Picker Mode</label>
+              <div class="select-wrapper">
+                <select id="picker-mode" onchange="updateDemoSettings()">
+                  <option value="date" selected>Date Picker</option>
+                  <option value="time">Time Picker</option>
+                  <option value="datetime">Date & Time Picker</option>
+                  <option value="range">Range Selection</option>
+                  <option value="multi">Multi Date Select</option>
+                  <option value="month">Month Only Picker</option>
+                  <option value="year">Year Only Picker</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="option-group">
+              <label>Accent Color</label>
+              <div class="color-picker-grid">
+                <button
+                  class="color-btn active"
+                  style="background-color: #3b82f6"
+                  onclick="setAccent('#3b82f6', this)"
+                  data-color="#3b82f6"
+                  aria-label="Blue accent"
+                ></button>
+                <button
+                  class="color-btn"
+                  style="background-color: #6366f1"
+                  onclick="setAccent('#6366f1', this)"
+                  data-color="#6366f1"
+                  aria-label="Indigo accent"
+                ></button>
+                <button
+                  class="color-btn"
+                  style="background-color: #8b5cf6"
+                  onclick="setAccent('#8b5cf6', this)"
+                  data-color="#8b5cf6"
+                  aria-label="Violet accent"
+                ></button>
+                <button
+                  class="color-btn"
+                  style="background-color: #f43f5e"
+                  onclick="setAccent('#f43f5e', this)"
+                  data-color="#f43f5e"
+                  aria-label="Rose accent"
+                ></button>
+                <button
+                  class="color-btn"
+                  style="background-color: #10b981"
+                  onclick="setAccent('#10b981', this)"
+                  data-color="#10b981"
+                  aria-label="Emerald accent"
+                ></button>
+                <button
+                  class="color-btn"
+                  style="background-color: #f59e0b"
+                  onclick="setAccent('#f59e0b', this)"
+                  data-color="#f59e0b"
+                  aria-label="Amber accent"
+                ></button>
+              </div>
+            </div>
+
+            <div class="option-group toggles">
+              <div class="toggle-row" id="row-dark">
+                <label for="toggle-dark">Dark Mode</label>
+                <input
+                  type="checkbox"
+                  id="toggle-dark"
+                  class="ios-switch"
+                  onchange="updateDemoSettings()"
+                />
+              </div>
+              <div class="toggle-row" id="row-inline">
+                <label for="toggle-inline">Inline Mode</label>
+                <input
+                  type="checkbox"
+                  id="toggle-inline"
+                  class="ios-switch"
+                  checked
+                  onchange="updateDemoSettings()"
+                />
+              </div>
+              <div class="toggle-row" id="row-weeknums">
+                <label for="toggle-weeknums">Show Week Numbers</label>
+                <input
+                  type="checkbox"
+                  id="toggle-weeknums"
+                  class="ios-switch"
+                  onchange="updateDemoSettings()"
+                />
+              </div>
+              <div class="toggle-row" id="row-today">
+                <label for="toggle-today">Highlight Today</label>
+                <input
+                  type="checkbox"
+                  id="toggle-today"
+                  class="ios-switch"
+                  checked
+                  onchange="updateDemoSettings()"
+                />
+              </div>
+              <div class="toggle-row" id="row-24h">
+                <label for="toggle-24h">24-Hour Format</label>
+                <input
+                  type="checkbox"
+                  id="toggle-24h"
+                  class="ios-switch"
+                  onchange="updateDemoSettings()"
+                />
+              </div>
+              <div class="toggle-row" id="row-seconds">
+                <label for="toggle-seconds">Show Seconds</label>
+                <input
+                  type="checkbox"
+                  id="toggle-seconds"
+                  class="ios-switch"
+                  onchange="updateDemoSettings()"
+                />
+              </div>
+              <div class="toggle-row" id="row-disabled">
+                <label for="toggle-disabled">Disabled</label>
+                <input
+                  type="checkbox"
+                  id="toggle-disabled"
+                  class="ios-switch"
+                  onchange="updateDemoSettings()"
+                />
+              </div>
+            </div>
+
+            <div class="option-group" id="group-date-variant">
+              <label for="date-variant">DatePicker Style</label>
+              <div class="select-wrapper">
+                <select id="date-variant" onchange="updateDemoSettings()">
+                  <option value="calendar" selected>Calendar Grid</option>
+                  <option value="wheel">Scroll Wheel</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="option-group" id="group-time-variant">
+              <label for="time-variant">TimePicker Style</label>
+              <div class="select-wrapper">
+                <select id="time-variant" onchange="updateDemoSettings()">
+                  <option value="wheel" selected>Scroll Wheel</option>
+                  <option value="clock">Analog Clock</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="option-group" id="group-first-day">
+              <label for="first-day">First Day of Week</label>
+              <div class="select-wrapper">
+                <select id="first-day" onchange="updateDemoSettings()">
+                  <option value="0" selected>Sunday</option>
+                  <option value="1">Monday</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="option-group" id="group-minute-interval">
+              <label for="minute-interval">Minute Interval</label>
+              <div class="select-wrapper">
+                <select id="minute-interval" onchange="updateDemoSettings()">
+                  <option value="1" selected>1 min</option>
+                  <option value="5">5 min</option>
+                  <option value="10">10 min</option>
+                  <option value="15">15 min</option>
+                  <option value="30">30 min</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- New Date Constraints Group -->
+            <div class="option-group toggles" id="group-date-limits">
+              <div class="toggle-row">
+                <label for="toggle-date-limits"
+                  >Limit Date Range (±14 days)</label
+                >
+                <input
+                  type="checkbox"
+                  id="toggle-date-limits"
+                  class="ios-switch"
+                  onchange="updateDemoSettings()"
+                />
+              </div>
+              <div class="toggle-row">
+                <label for="toggle-marked">Mark Specific Dates</label>
+                <input
+                  type="checkbox"
+                  id="toggle-marked"
+                  class="ios-switch"
+                  checked
+                  onchange="updateDemoSettings()"
+                />
+              </div>
+            </div>
+
+            <!-- New Time Constraints Group -->
+            <div class="option-group toggles" id="group-time-limits">
+              <div class="toggle-row">
+                <label for="toggle-time-limits"
+                  >Limit Time Range (08:00 - 20:00)</label
+                >
+                <input
+                  type="checkbox"
+                  id="toggle-time-limits"
+                  class="ios-switch"
+                  onchange="updateDemoSettings()"
+                />
+              </div>
+            </div>
+
+            <!-- New Multi Select Config Group -->
+            <div class="option-group" id="group-multi-config">
+              <label for="max-multi-select">Max Multi Select</label>
+              <div class="select-wrapper">
+                <select id="max-multi-select" onchange="updateDemoSettings()">
+                  <option value="0" selected>Unlimited (∞)</option>
+                  <option value="3">3 selections</option>
+                  <option value="5">5 selections</option>
+                  <option value="7">7 selections</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- New Modal Config Group -->
+            <div class="option-group" id="group-modal-config">
+              <label for="modal-position">Modal Position</label>
+              <div class="select-wrapper">
+                <select id="modal-position" onchange="updateDemoSettings()">
+                  <option value="bottom">Bottom Sheet</option>
+                  <option value="center" selected>Center Dialog</option>
+                  <option value="top">Top Popover</option>
+                </select>
+              </div>
+
+              <div class="input-row" style="margin-top: 8px">
+                <label for="input-placeholder">Placeholder Text</label>
+                <input
+                  type="text"
+                  id="input-placeholder"
+                  class="text-input"
+                  value="Select date"
+                  oninput="updateDemoSettings()"
+                />
+              </div>
+
+              <div
+                class="toggle-row"
+                style="
+                  margin-top: 12px;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <label for="toggle-modal-visible">Modal Visible</label>
+                <input
+                  type="checkbox"
+                  id="toggle-modal-visible"
+                  class="ios-switch"
+                  onchange="updateDemoSettings()"
+                />
+              </div>
+            </div>
+
+            <!-- New Button Labels Group -->
+            <div class="option-group" id="group-button-labels">
+              <div class="input-row">
+                <label for="input-confirm-label">Confirm Label</label>
+                <input
+                  type="text"
+                  id="input-confirm-label"
+                  class="text-input"
+                  value="Confirm"
+                  oninput="updateDemoSettings()"
+                />
+              </div>
+              <div class="input-row" style="margin-top: 8px">
+                <label for="input-clear-label">Clear Label</label>
+                <input
+                  type="text"
+                  id="input-clear-label"
+                  class="text-input"
+                  value="Clear"
+                  oninput="updateDemoSettings()"
+                />
+              </div>
+            </div>
+
+            <div class="option-group">
+              <label for="picker-locale">Locale</label>
+              <div class="select-wrapper">
+                <select id="picker-locale" onchange="updateDemoSettings()">
+                  <option value="en-US" selected>en-US — English (US)</option>
+                  <option value="en-GB">en-GB — English (UK)</option>
+                  <option value="fr-FR">fr-FR — Français</option>
+                  <option value="de-DE">de-DE — Deutsch</option>
+                  <option value="es-ES">es-ES — Español</option>
+                  <option value="ja-JP">ja-JP — 日本語</option>
+                  <option value="zh-CN">zh-CN — 中文 (简体)</option>
+                  <option value="hi-IN">hi-IN — हिन्दी</option>
+                  <option value="ar-SA">ar-SA — العربية</option>
+                  <option value="pt-BR">pt-BR — Português (BR)</option>
+                  <option value="ko-KR">ko-KR — 한국어</option>
+                  <option value="ru-RU">ru-RU — Русский</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="option-group">
+              <label for="picker-timezone">Timezone</label>
+              <div class="select-wrapper">
+                <select id="picker-timezone" onchange="updateDemoSettings()">
+                  <option value="" selected>(Device default)</option>
+                  <option value="UTC">UTC</option>
+                  <option value="America/New_York">America/New_York</option>
+                  <option value="Europe/London">Europe/London</option>
+                  <option value="Europe/Paris">Europe/Paris</option>
+                  <option value="Asia/Kolkata">Asia/Kolkata</option>
+                  <option value="Asia/Tokyo">Asia/Tokyo</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phone Mockup Container -->
+          <div class="phone-container">
+            <div class="phone-mockup">
+              <div class="phone-speaker"></div>
+              <div class="phone-screen">
+                <iframe
+                  id="demo-iframe"
+                  src="./expo-demo/index.html"
+                  title="Interactive Date Time Picker Showcase"
+                ></iframe>
+                <div
+                  id="iframe-fallback"
+                  class="iframe-fallback-overlay hidden"
+                >
+                  <div class="fallback-content">
+                    <div class="fallback-icon">📱</div>
+                    <h3>Simulator Preview</h3>
+                    <p class="fallback-desc">
+                      Could not auto-load the built preview. If you are
+                      developing locally, build the app:
+                    </p>
+                    <pre
+                      class="fallback-code-block"
+                    ><code>npm run predeploy</code></pre>
+                    <p class="fallback-desc">
+                      Or connect to your active Expo Web server:
+                    </p>
+                    <div class="fallback-input-row">
+                      <input
+                        type="text"
+                        id="fallback-url-input"
+                        class="fallback-input"
+                        value="http://localhost:8081"
+                        placeholder="http://localhost:8081"
+                      />
+                      <button
+                        onclick="loadCustomIframeUrl()"
+                        class="fallback-btn"
+                      >
+                        Connect
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="phone-home-indicator"></div>
+            </div>
+
+            <!-- Code Snippet Display -->
+            <div class="code-snippet-box">
+              <div class="snippet-header">
+                <span>JSX Example</span>
+                <button onclick="copySnippet()" aria-label="Copy snippet">
+                  Copy
+                </button>
+              </div>
+              <pre><code class="language-jsx" id="jsx-output">loading...</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage Section -->
+    <section id="usage" class="usage-section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2>Quick Start Integration</h2>
+          <p>
+            Integrate the component into your project with just a few lines of
+            code.
+          </p>
+        </div>
+
+        <div class="code-window">
+          <div class="window-header">
+            <div class="window-buttons">
+              <span class="win-btn close"></span>
+              <span class="win-btn minimize"></span>
+              <span class="win-btn expand"></span>
+            </div>
+            <span class="window-title">App.tsx</span>
+          </div>
+          <div class="window-body">
+            <pre><code class="language-tsx"><span class="keyword">import</span> React, { useState } from <span class="string">'react'</span>;
+<span class="keyword">import</span> { SafeAreaView, StyleSheet } from <span class="string">'react-native'</span>;
+<span class="keyword">import</span> { DateTimePicker } from <span class="string">'@bhavishyjain/react-native-date-time-picker'</span>;
+
+<span class="keyword">export default function</span> <span class="function">App</span>() {
+  <span class="keyword">const</span> [date, setDate] = <span class="function">useState</span>(<span class="keyword">new</span> <span class="function">Date</span>());
+
+  <span class="keyword">return</span> (
+    <span class="tag">&lt;</span><span class="tag-name">SafeAreaView</span> <span class="attr-name">style</span>=<span class="attr-value">{styles.container}</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;</span><span class="tag-name">DateTimePicker</span>
+        <span class="attr-name">mode</span>=<span class="string">"date"</span>
+        <span class="attr-name">value</span>=<span class="attr-value">{date}</span>
+        <span class="attr-name">onChange</span>=<span class="attr-value">{(newDate) =&gt; setDate(newDate)}</span>
+        <span class="attr-name">accentColor</span>=<span class="string">"#3B82F6"</span>
+      <span class="tag">/&gt;</span>
+    <span class="tag">&lt;/</span><span class="tag-name">SafeAreaView</span><span class="tag">&gt;</span>
+  );
+}
+
+<span class="keyword">const</span> styles = StyleSheet.<span class="function">create</span>({
+  container: {
+    flex: <span class="number">1</span>,
+    justifyContent: <span class="string">'center'</span>,
+    alignItems: <span class="string">'center'</span>,
+    backgroundColor: <span class="string">'#F5F5F7'</span>,
+  },
+});</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Props Section -->
+    <section class="props-section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2>Component Properties</h2>
+          <p>
+            Explore all the configurability options that are available out of
+            the box.
+          </p>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Prop Name</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>mode</code></td>
+                <td>
+                  <code
+                    >'date' | 'time' | 'datetime' | 'range' | 'multi' | 'month'
+                    | 'year'</code
+                  >
+                </td>
+                <td><code>'date'</code></td>
+                <td>Sets the behavior and UI view of the picker.</td>
+              </tr>
+              <tr>
+                <td><code>value</code></td>
+                <td><code>PickerValue</code></td>
+                <td><code>null</code></td>
+                <td>Selected value matching the configured mode.</td>
+              </tr>
+              <tr>
+                <td><code>onChange</code></td>
+                <td><code>(value: PickerValue) => void</code></td>
+                <td><code>required</code></td>
+                <td>
+                  Callback triggered when the value selection is confirmed.
+                </td>
+              </tr>
+              <tr>
+                <td><code>onChangeImmediate</code></td>
+                <td><code>(value: PickerValue) => void</code></td>
+                <td><code>undefined</code></td>
+                <td>
+                  Callback triggered immediately during scrolling/dragging
+                  before confirmation.
+                </td>
+              </tr>
+              <tr>
+                <td><code>disabled</code></td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>Disables all interactions with the picker.</td>
+              </tr>
+              <tr>
+                <td><code>minDate</code> / <code>maxDate</code></td>
+                <td><code>Date</code></td>
+                <td><code>undefined</code></td>
+                <td>Restricts selectable calendar date boundaries.</td>
+              </tr>
+              <tr>
+                <td><code>disabledDates</code></td>
+                <td>
+                  <code
+                    >Date[] | DisabledDateRange[] | ((date: Date) =>
+                    boolean)</code
+                  >
+                </td>
+                <td><code>undefined</code></td>
+                <td>
+                  Array of specific dates, range objects, or filter predicate to
+                  disable selections.
+                </td>
+              </tr>
+              <tr>
+                <td><code>markedDates</code></td>
+                <td><code>MarkedDate[]</code></td>
+                <td><code>undefined</code></td>
+                <td>
+                  Decorates specific calendar cells with colored dots or text
+                  labels.
+                </td>
+              </tr>
+              <tr>
+                <td><code>locale</code></td>
+                <td><code>string</code></td>
+                <td><code>'en'</code></td>
+                <td>
+                  BCP 47 language code for name, month, and day label
+                  formatting.
+                </td>
+              </tr>
+              <tr>
+                <td><code>timezone</code></td>
+                <td><code>string</code></td>
+                <td><code>device timezone</code></td>
+                <td>
+                  IANA timezone identifier (e.g.
+                  <code>'America/New_York'</code>) for local computation.
+                </td>
+              </tr>
+              <tr>
+                <td><code>customTheme</code></td>
+                <td><code>Partial&lt;PickerThemeValues&gt;</code></td>
+                <td><code>undefined</code></td>
+                <td>
+                  Styling configuration overrides for colors, background
+                  borders, and markers.
+                </td>
+              </tr>
+              <tr>
+                <td><code>accentColor</code></td>
+                <td><code>string</code></td>
+                <td><code>'#3B82F6'</code></td>
+                <td>
+                  Primary visual tint color for highlighted ranges/dates and
+                  clock hands.
+                </td>
+              </tr>
+              <tr>
+                <td><code>darkMode</code></td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>Forces UI component into dark mode.</td>
+              </tr>
+              <tr>
+                <td><code>firstDayOfWeek</code></td>
+                <td><code>0 | 1</code></td>
+                <td><code>0</code></td>
+                <td>Sets week start day: 0 for Sunday, 1 for Monday.</td>
+              </tr>
+              <tr>
+                <td><code>is24Hour</code></td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>
+                  Uses 24-hour time format instead of 12-hour AM/PM columns.
+                </td>
+              </tr>
+              <tr>
+                <td><code>minuteInterval</code></td>
+                <td><code>1 | 5 | 10 | 15 | 30</code></td>
+                <td><code>1</code></td>
+                <td>Snap step intervals for minute selection wheels.</td>
+              </tr>
+              <tr>
+                <td><code>showSeconds</code></td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>
+                  Displays the seconds column or wheel indicator in time picker.
+                </td>
+              </tr>
+              <tr>
+                <td><code>minTime</code> / <code>maxTime</code></td>
+                <td><code>string</code></td>
+                <td><code>undefined</code></td>
+                <td>
+                  Restricts selectable time boundaries (format:
+                  <code>'HH:MM'</code> or <code>'HH:MM:SS'</code>).
+                </td>
+              </tr>
+              <tr>
+                <td><code>datePickerVariant</code></td>
+                <td><code>'calendar' | 'wheel'</code></td>
+                <td><code>'calendar'</code></td>
+                <td>
+                  Renders either a calendar day grid or scroll wheels for dates.
+                </td>
+              </tr>
+              <tr>
+                <td><code>timePickerVariant</code></td>
+                <td><code>'wheel' | 'clock'</code></td>
+                <td><code>'wheel'</code></td>
+                <td>
+                  Renders either scroll wheels or an analog dial clock face for
+                  time.
+                </td>
+              </tr>
+              <tr>
+                <td><code>inline</code></td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>
+                  Renders the component inline in viewport; false opens it in a
+                  popover modal.
+                </td>
+              </tr>
+              <tr>
+                <td><code>visible</code></td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>
+                  Controls modal visibility state (applicable when
+                  <code>inline={false}</code>).
+                </td>
+              </tr>
+              <tr>
+                <td><code>placeholder</code></td>
+                <td><code>string</code></td>
+                <td><code>'Select date...'</code></td>
+                <td>Placeholder string displayed in custom text boxes.</td>
+              </tr>
+              <tr>
+                <td><code>placeholderStyle</code></td>
+                <td><code>TextStyle</code></td>
+                <td><code>undefined</code></td>
+                <td>
+                  Custom typography style overrides for the text placeholder.
+                </td>
+              </tr>
+              <tr>
+                <td><code>modalPosition</code></td>
+                <td><code>'top' | 'center' | 'bottom'</code></td>
+                <td><code>'bottom'</code></td>
+                <td>
+                  Vertical alignment overlay anchor position for the picker
+                  modal.
+                </td>
+              </tr>
+              <tr>
+                <td><code>onOpen</code> / <code>onClose</code></td>
+                <td><code>() => void</code></td>
+                <td><code>undefined</code></td>
+                <td>Callbacks triggered when the modal is opened or closed.</td>
+              </tr>
+              <tr>
+                <td><code>onDismiss</code></td>
+                <td><code>() => void</code></td>
+                <td><code>undefined</code></td>
+                <td>
+                  Callback triggered when user cancels or dismisses the modal.
+                </td>
+              </tr>
+              <tr>
+                <td><code>onMonthChange</code></td>
+                <td><code>(year: number, month: number) => void</code></td>
+                <td><code>undefined</code></td>
+                <td>
+                  Callback triggered when the calendar display month page
+                  changes.
+                </td>
+              </tr>
+              <tr>
+                <td><code>onRangeIncomplete</code></td>
+                <td><code>() => void</code></td>
+                <td><code>undefined</code></td>
+                <td>
+                  Callback triggered when range mode picker is submitted with
+                  only a start date.
+                </td>
+              </tr>
+              <tr>
+                <td><code>onMaxReached</code></td>
+                <td><code>() => void</code></td>
+                <td><code>undefined</code></td>
+                <td>
+                  Callback triggered when selected multi-dates count exceeds
+                  <code>maxMultiSelect</code> limit.
+                </td>
+              </tr>
+              <tr>
+                <td><code>maxMultiSelect</code></td>
+                <td><code>number</code></td>
+                <td><code>undefined</code></td>
+                <td>
+                  Limits the maximum quantity of selectable dates in multi mode.
+                </td>
+              </tr>
+              <tr>
+                <td><code>highlightToday</code></td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>
+                  Renders a distinct ring outline overlay around today's
+                  calendar cell.
+                </td>
+              </tr>
+              <tr>
+                <td><code>showWeekNumbers</code></td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>
+                  Renders the ISO calendar week numbers column on the left
+                  margin.
+                </td>
+              </tr>
+              <tr>
+                <td><code>confirmLabel</code> / <code>clearLabel</code></td>
+                <td><code>string</code></td>
+                <td><code>'Confirm' / 'Clear'</code></td>
+                <td>Custom text override labels for action buttons.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <p>&copy; 2026 Bhavishy Jain. Released under the MIT License.</p>
+        <div class="footer-links">
+          <a
+            href="https://github.com/bhavishyjain/react-native-date-time-picker"
+            >GitHub</a
+          >
+          <a
+            href="https://www.npmjs.com/package/@bhavishyjain/react-native-date-time-picker"
+            >NPM Package</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js?v=0.1.0"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+{
+  "name": "@bhavishyjain/react-native-date-time-picker",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A smooth, animated date and time picker for React Native with no native dependencies",
+  "license": "MIT",
+  "author": "Bhavishy Jain",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhavishyjain/react-native-date-time-picker.git"
+  },
+  "homepage": "https://github.com/bhavishyjain/react-native-date-time-picker#readme",
+  "bugs": {
+    "url": "https://github.com/bhavishyjain/react-native-date-time-picker/issues"
+  },
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/src/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "babel.config.cjs"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig.cjs.json",
+    "lint": "eslint src --ext .ts,.tsx",
+    "test": "jest --passWithNoTests",
+    "test:ci": "jest --coverage --passWithNoTests",
+    "example": "cd example && expo start"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/dist/",
+      "/example/"
+    ]
+  },
+  "keywords": [
+    "react-native",
+    "date-picker",
+    "time-picker",
+    "datetime",
+    "calendar",
+    "animated",
+    "expo",
+    "typescript",
+    "date-range",
+    "clock",
+    "week-picker",
+    "month-picker",
+    "gesture"
+  ],
+  "peerDependencies": {
+    "react": ">=17",
+    "react-native": ">=0.71",
+    "react-native-gesture-handler": ">=2.0.0",
+    "react-native-reanimated": ">=3.0.0",
+    "react-native-safe-area-context": ">=4.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.0.0",
+    "jest": "^30.2.0",
+    "eslint": "^10.4.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "react": "^19.1.1",
+    "react-native": "^0.81.4",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.59.4"
+  }
+}

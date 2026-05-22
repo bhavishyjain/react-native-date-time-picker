@@ -1,0 +1,27 @@
+{
+  "name": "react-native-date-time-picker-example",
+  "private": true,
+  "version": "0.1.0",
+  "main": "expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "build:web": "expo export --platform web",
+    "predeploy": "rm -rf dist && npm run build:web && mkdir -p dist/expo-demo && mv dist/index.html dist/_expo dist/metadata.json dist/expo-demo/ && node post-build.js && cp -r landing/* dist/ && touch dist/.nojekyll",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@expo/metro-runtime": "~5.0.5",
+    "expo": "~53.0.0",
+    "expo-asset": "~11.1.5",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-native": "0.79.6",
+    "react-native-gesture-handler": "~2.24.0",
+    "react-native-reanimated": "~3.17.4",
+    "react-native-safe-area-context": "5.4.0",
+    "react-native-web": "^0.20.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
