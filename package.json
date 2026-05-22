@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/bhavishyjain/react-native-date-time-picker.git"
   },
-  "homepage": "https://github.com/bhavishyjain/react-native-date-time-picker#readme",
+  "homepage": "https://react-native-date-time-picker.vercel.app",
   "bugs": {
     "url": "https://github.com/bhavishyjain/react-native-date-time-picker/issues"
   },

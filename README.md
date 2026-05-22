@@ -10,15 +10,22 @@
 
 <br />
 
-![npm](https://img.shields.io/npm/v/@bhavishyjain/react-native-date-time-picker)
+[![npm](https://img.shields.io/npm/v/%40bhavishyjain/react-native-date-time-picker?style=flat-square&color=6366f1&labelColor=1a1b26)](https://www.npmjs.com/package/@bhavishyjain/react-native-date-time-picker)
 [![MIT License](https://img.shields.io/badge/license-MIT-6366f1?style=flat-square&labelColor=1a1b26)](./LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-ready-6366f1?style=flat-square&labelColor=1a1b26)](https://www.typescriptlang.org/)
 [![Expo Compatible](https://img.shields.io/badge/Expo-compatible-6366f1?style=flat-square&labelColor=1a1b26)](https://expo.dev)
 [![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20Android%20%7C%20Web-6366f1?style=flat-square&labelColor=1a1b26)](https://reactnative.dev)
 
-<br />
-
 </div>
+
+---
+
+## Demo
+
+A minimal demo page can be found in the `example` directory.
+
+🌐 Live demo is also available:  
+👉 https://react-native-date-time-picker.vercel.app/
 
 ---
 
@@ -39,13 +46,13 @@
 
 ## Platform Support
 
-| Platform | Supported |
-| -------- | --------- |
-| iOS | ✅ |
-| Android | ✅ |
-| Expo (managed & bare) | ✅ |
-| React Native Web | ✅ |
-| Expo Web | ✅ |
+| Platform              | Supported |
+| --------------------- | --------- |
+| iOS                   | ✅        |
+| Android               | ✅        |
+| Expo (managed & bare) | ✅        |
+| React Native Web      | ✅        |
+| Expo Web              | ✅        |
 
 > **No Expo dependency required.** The library only depends on `react-native`, `react-native-reanimated`, `react-native-gesture-handler`, and `react-native-safe-area-context` — all of which work in bare React Native, Expo managed workflow, and on the web.
 
