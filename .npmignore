@@ -1,11 +1,26 @@
-.idea/
-.DS_Store
-__MACOSX/
+# Development
 example/
 src/
-*.log
-.github/
-babel.config.cjs
-tsconfig.json
-tsconfig.cjs.json
+*.test.ts
+*.spec.ts
+coverage/
+
+# Build artifacts to exclude
+dist/example/
+dist/__tests__/
+dist/cjs/__tests__/
+dist/cjs/example/
+
+# Tooling
+.idea/
+.vscode/
+.eslintrc*
 eslint.config.js
+babel.config.cjs
+tsconfig*.json
+*.log
+
+# Misc
+.DS_Store
+.env
+.env.*
