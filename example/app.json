@@ -2,7 +2,7 @@
   "expo": {
     "name": "react-native-date-time-picker-example",
     "slug": "react-native-date-time-picker-example",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "platforms": ["ios", "android", "web"],
     "web": {
       "bundler": "metro"

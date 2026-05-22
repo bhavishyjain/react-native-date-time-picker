@@ -1,6 +1,6 @@
 {
   "name": "@bhavishyjain/react-native-date-time-picker",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "description": "A smooth, animated date and time picker for React Native with no native dependencies",
   "license": "MIT",

@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 This project follows [Semantic Versioning](https://semver.org/).
 
+## [0.1.2] — 2026-05-22 · Documentation & Demo Links Update
+
+### Changed
+- Update homepage link to live Vercel web demo in package.json
+- Redesign README badges
+- Add explicit Demo section with Vercel link in body of README
+
 ## [0.1.1] — 2026-05-22 · Initial Release
 
 ### Added
